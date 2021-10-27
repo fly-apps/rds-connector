@@ -161,7 +161,7 @@ resource "aws_instance" "rds-gw" {
     provisioner "remote-exec" {
         inline = [
 	    "sudo apt update",
-	    "sudo apt update",
+	    "sudo apt upgrade -y",
 	    "sudo apt install -y wireguard resolvconf pgbouncer postgresql-client",
             "sudo mv /tmp/wg0.conf /etc/wireguard",
 	    "sudo cp /tmp/pgbouncer.ini /etc/pgbouncer/pgbouncer.ini",
