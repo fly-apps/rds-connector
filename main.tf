@@ -168,6 +168,7 @@ resource "aws_instance" "rds-gw" {
 	    "sudo cp /tmp/userlist.txt /etc/pgbouncer/userlist.txt",
             "sudo systemctl restart pgbouncer",
             "sudo /usr/bin/wg-quick up wg0",
+	    "sudo systemctl enable wg-quick@wg0.service",
         ]
 	connection { 
 	    type     = "ssh"
